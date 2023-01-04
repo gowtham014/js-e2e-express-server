@@ -9,12 +9,12 @@ pipeline{
          }
         stage ('build') {
             steps{
-                sh "npm install"
+                sh "sudo npm install"
             }
         }
         stage ('start'){
             steps{
-                sh "npm start"
+                sh "sudo npm start"
             }
         }
     }
