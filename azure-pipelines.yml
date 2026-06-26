@@ -75,8 +75,9 @@ steps:
 
 - task: UniversalPackages@1
   inputs:
-    command: publish
+    command: 'publish'
     feed: 'poc/first-package'
     packageName: 'second-package'
-    packageVersion: '$(ARCHIVE_TAG)'
+    packageVersion: '1.0.0-$(ARCHIVE_TAG)'
+    versionIncrement: 'minor'
     directory: '$(Build.ArtifactStagingDirectory)'
