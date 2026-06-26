@@ -54,15 +54,15 @@ steps:
 #     Contents: '$(ARCHIVE_TAG).zip'
 #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-# - task: UniversalPackages@0
-#   inputs:
-#     command: 'publish'
-#     publishDirectory: '$(Build.ArtifactStagingDirectory)'
-#     feedsToUsePublish: 'internal'
-#     vstsFeedPublish: '00122c08-9d0d-4447-9c18-1d9402ab0153/58250eef-5b76-4ef3-96b7-ed044e59d901'
-#     vstsFeedPackagePublish: 'first'
-#     versionOption: 'custom'
-#     versionPublish: '1.0.0-$(ARCHIVE_TAG)'
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '00122c08-9d0d-4447-9c18-1d9402ab0153/58250eef-5b76-4ef3-96b7-ed044e59d901'
+    vstsFeedPackagePublish: 'second-test'
+    versionOption: 'custom'
+    versionPublish: '1.0.0-$(ARCHIVE_TAG)'
 
 # - task: UniversalPackages@1
 #   inputs:
@@ -73,10 +73,10 @@ steps:
 #     directory: '$(Build.ArtifactStagingDirectory)'
 
 
-- task: UniversalPackages@1
-  inputs:
-    command: publish
-    feed: first-package
-    packageName: second-package
-    packageVersion: '1.0.0-$(ARCHIVE_TAG)'
-    directory: '$(Build.ArtifactStagingDirectory)'
+# - task: UniversalPackages@1
+#   inputs:
+#     command: publish
+#     feed: first-package
+#     packageName: second-package
+#     packageVersion: '1.0.0-$(ARCHIVE_TAG)'
+#     directory: '$(Build.ArtifactStagingDirectory)'
