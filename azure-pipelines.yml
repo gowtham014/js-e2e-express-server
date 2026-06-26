@@ -74,5 +74,5 @@ steps:
     command: 'publish'
     feed: 'tesing'
     packageName: 'testing'
-    packageVersion: '$(ARCHIVE_TAG)'''
+    packageVersion: '$(ARCHIVE_TAG)'
     directory: '$(Build.ArtifactStagingDirectory)'
