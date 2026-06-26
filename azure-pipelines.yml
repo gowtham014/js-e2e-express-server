@@ -61,4 +61,4 @@ steps:
     vstsFeedPublish: 'faa28e20-2728-4710-8565-ca31ecede692'
     vstsFeedPackagePublish: 'testing'
     versionOption: 'custom'
-    versionPublish: '$(ARCHIVE_TAG).zip'
+    versionPublish: '$(ARCHIVE_TAG)'
