@@ -62,7 +62,7 @@ steps:
     vstsFeedPublish: '00122c08-9d0d-4447-9c18-1d9402ab0153/58250eef-5b76-4ef3-96b7-ed044e59d901'
     vstsFeedPackagePublish: 'first'
     versionOption: 'custom'
-    versionPublish: '1.0.0-$(Build.SourceVersion)'
+    versionPublish: '1.0.0-$(ARCHIVE_TAG)'
 
 # - task: UniversalPackages@1
 #   inputs:
