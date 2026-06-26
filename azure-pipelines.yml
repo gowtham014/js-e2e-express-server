@@ -78,5 +78,5 @@ steps:
     command: publish
     feed: 'poc/first-package'
     packageName: 'second-package'
-    packageVersion: '1.0.0-$(ARCHIVE_TAG)'
+    packageVersion: '$(ARCHIVE_TAG)'
     directory: '$(Build.ArtifactStagingDirectory)'
