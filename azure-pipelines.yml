@@ -58,7 +58,7 @@ steps:
     command: publish
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUsePublish: internal
-    vstsFeedPublish: 'poc\faa28e20-2728-4710-8565-ca31ecede692'
+    vstsFeedPublish: 'testing-01\faa28e20-2728-4710-8565-ca31ecede692'
     vstsFeedPackagePublish: 'testing'
     versionOption: custom
     versionPublish: '1.0.0-$(ARCHIVE_TAG)'
