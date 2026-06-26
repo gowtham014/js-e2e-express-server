@@ -45,3 +45,10 @@ steps:
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(ARCHIVE_TAG).zip'
+
+- task: CopyFiles@2
+  displayName: "Copy Artifact"
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: '$(ARCHIVE_TAG).zip'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
