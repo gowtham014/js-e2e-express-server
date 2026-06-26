@@ -55,12 +55,12 @@ steps:
 
 - task: UniversalPackages@0
   inputs:
-    command: publish
+    command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    feedsToUsePublish: internal
-    vstsFeedPublish: 'testing-01\faa28e20-2728-4710-8565-ca31ecede692'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'poc/tesing'
     vstsFeedPackagePublish: 'testing'
-    versionOption: custom
+    versionOption: 'custom'
     versionPublish: '1.0.0-$(ARCHIVE_TAG)'
 
 # - task: UniversalPackages@1
