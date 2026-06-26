@@ -60,9 +60,10 @@ steps:
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: '486316dd-dbeb-48af-a38c-962c76e0b24a/85df61dc-8312-4ec7-9f57-470e3146b273'
-    vstsFeedPackagePublish: 'testing'
+    vstsFeedPackagePublish: 'first'
     versionOption: 'custom'
-    versionPublish: '1.0.0-$(ARCHIVE_TAG)'
+    # versionPublish: '1.0.0-$(ARCHIVE_TAG)'
+    versionPublish: '1.0.0-$(Build.SourceVersion)'
 
 # - task: UniversalPackages@1
 #   inputs:
