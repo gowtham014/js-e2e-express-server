@@ -56,7 +56,7 @@ steps:
 - task: UniversalPackages@1
   inputs:
     command: 'publish'
-    feed: 'tesing'
+    feed: 'poc/tesing'
     packageName: 'testing'
     packageVersion: '$(ARCHIVE_TAG).zip'
     directory: '''$(Build.ArtifactStagingDirectory)'''
