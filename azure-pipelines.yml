@@ -52,13 +52,14 @@ steps:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: '$(ARCHIVE_TAG).zip'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-- task: UniversalPackages@1
+    
+- task: UniversalPackages@0
   inputs:
     command: 'publish'
-    organization: 'poc'
-    feed: 'tesing'
-    packageName: 'testing'
-    packageVersion: '$(ARCHIVE_TAG).zip'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'faa28e20-2728-4710-8565-ca31ecede692'
+    vstsFeedPackagePublish: 'testing'
+    versionOption: 'custom'
+    versionPublish: '$(ARCHIVE_TAG).zip'
     directory: '$(Build.ArtifactStagingDirectory)'
-    
