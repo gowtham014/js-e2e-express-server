@@ -3,11 +3,45 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
-
 pool:
   vmImage: ubuntu-latest
 
+trigger: none
+pr: none
+
 steps:
-- script: echo Hello, world!
+
+- task: UseNode@1
+  inputs:
+    checkLatest: true
+
+- task: Bash@3
+  displayName: "Set Archive Tag"
+  inputs:
+    targetType: inline
+    script: |
+      BRANCH=$(Build.SourceBranchName)
+
+      if [ "$BRANCH" = "main" ]; then
+        PREFIX="prod"
+      else
+        PREFIX="pre-prod"
+      fi
+      ARCHIVE_TAG="${PREFIX}-$(Build.SourceVersion)"
+      echo "Archive Tag: $ARCHIVE_TAG"
+      echo "##vso[task.setvariable variable=ARCHIVE_TAG]$ARCHIVE_TAG"
+
+- task: Bash@3
+  displayName: testing
+  inputs:
+    targetType: inline
+    script:  |
+      echo "Testing Tag - $(ARCHIVE_TAG)"
+  
+- task: ArchiveFiles@2
+  displayName: "Archive Build"
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(ARCHIVE_TAG).zip'
