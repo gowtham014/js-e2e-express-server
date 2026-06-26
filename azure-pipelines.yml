@@ -70,7 +70,6 @@ steps:
     feed: 'packages'
     packageName: 'first'
     packageVersion: '''1.0-$(ARCHIVE_TAG)'''
-    versionIncrement: 'minor'
     directory: '$(Build.ArtifactStagingDirectory)'
 
 
