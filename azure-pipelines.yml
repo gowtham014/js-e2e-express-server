@@ -53,7 +53,6 @@ steps:
     Contents: '$(ARCHIVE_TAG).zip'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-  
 - task: UniversalPackages@0
   inputs:
     command: publish
