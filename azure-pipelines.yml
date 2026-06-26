@@ -64,12 +64,12 @@ steps:
     versionOption: 'custom'
     versionPublish: '1.0.0-$(ARCHIVE_TAG)'
 
-# - task: UniversalPackages@1
-#   inputs:
-#     command: 'publish'
-#     feed: 'packages'
-#     packageName: 'first'
-#     packageVersion: '''1.0-$(ARCHIVE_TAG)'''
-#     directory: '$(Build.ArtifactStagingDirectory)'
+- task: UniversalPackages@1
+  inputs:
+    command: 'publish'
+    feed: 'packages'
+    packageName: 'second-packages'
+    packageVersion: '1.0.0-$(ARCHIVE_TAG)'
+    directory: '$(Build.ArtifactStagingDirectory)'
 
 
