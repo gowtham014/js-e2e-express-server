@@ -58,15 +58,20 @@ steps:
     command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'poc/tesing'
+    vstsFeedPublish: '486316dd-dbeb-48af-a38c-962c76e0b24a/85df61dc-8312-4ec7-9f57-470e3146b273'
     vstsFeedPackagePublish: 'testing'
     versionOption: 'custom'
-    versionPublish: '1.0.0-$(ARCHIVE_TAG)'
+    versionPublish: '$(ARCHIVE_TAG)'
 
+    
 # - task: UniversalPackages@1
 #   inputs:
 #     command: 'publish'
 #     feed: 'tesing'
+
+
+
+
 #     packageName: 'testing'
 #     packageVersion: '$(ARCHIVE_TAG)'
 #     directory: '$(Build.ArtifactStagingDirectory)'
