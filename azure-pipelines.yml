@@ -79,5 +79,5 @@ steps:
     feed: 'poc/first-package'
     packageName: 'second-package'
     packageVersion: '1.0.0-$(ARCHIVE_TAG)'
-    versionIncrement: 'minor'
+    # versionIncrement: 'minor'
     directory: '$(Build.ArtifactStagingDirectory)'
