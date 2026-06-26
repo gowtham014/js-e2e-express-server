@@ -72,7 +72,7 @@ steps:
 - task: UniversalPackages@1
   inputs:
     command: 'publish'
-    feed: 'testing'
+    feed: 'tesing'
     packageName: 'testing'
     packageVersion: '$(ARCHIVE_TAG)'''
     directory: '$(Build.ArtifactStagingDirectory)'
