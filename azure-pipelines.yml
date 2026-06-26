@@ -57,6 +57,7 @@ steps:
   inputs:
     command: 'publish'
     feed: 'tesing'
-    packageName: $(ARCHIVE_TAG).zip
+    packageName: 'testing'
+    packageVersion: '$(ARCHIVE_TAG).zip'
     directory: '''$(Build.ArtifactStagingDirectory)'''
     
